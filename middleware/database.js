@@ -7,7 +7,7 @@ const connect = async () => {
     };
 
     const connection = await mongoose.connect(
-      "mongodb://mongo:27017/docker-db-test",
+      `${process.env.MONGO_URL}/songs`,
       options
     );
     if (connection)
