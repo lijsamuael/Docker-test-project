@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  app:
+    container_name: docker-mongo-music-app-test
+    restart: always
+    build: .
+    ports:
+      - "6000:6000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/docker-db-test
+
+  mongo:
+    container_name: mongo-test
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27012:27017"
+
+  mongo-express:
+    container_name: mongo-express-test
+    image: mongo-express
+    ports:
+      - "8082:8080"
+    depends_on:
+      - mongo
