@@ -12,7 +12,11 @@ const app = express();
 const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-  origin: ["http://localhost:5173", "http://localhost:3000"],
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://music-dashboard-one.vercel.app",
+  ],
 };
 app.use(cors(corsOptions));
 app.use(express.json());
