@@ -106,6 +106,8 @@ const getAlbumsByArtist = async (req, res) => {
   }
 };
 
+
+
 module.exports = {
   getTotalSongs,
   getTotalArtists,
